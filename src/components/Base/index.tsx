@@ -1,5 +1,6 @@
 import * as React from 'react'
 import Header from '../Header'
+import StationList from '../StationsList'
 import styles from './index.module.css'
 
 interface Props {}
@@ -9,13 +10,9 @@ const Base = (props: Props) => {
     <div className={styles.container}>
       <Header />
 
-      <div>
-        <h1>STATIONS</h1>
-      </div>
+      <StationList />
 
-      <div>
-        <h1>FOOTER</h1>
-      </div>
+      <h1>FOOTER</h1>
     </div>
   )
 }
