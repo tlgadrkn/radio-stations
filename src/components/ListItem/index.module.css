@@ -1,0 +1,7 @@
+.listItem {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  border-bottom: 1px solid #a2abbd;
+  color: #a2abbd;
+}
