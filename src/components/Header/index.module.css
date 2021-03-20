@@ -1,9 +1,9 @@
 .widgetHeader {
   height: 160px;
-  width: 640px;
+  width: 100%;
   background-color: #ecaa5b;
   border-top-left-radius: 47px;
   border-top-right-radius: 47px;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
 }
