@@ -7,10 +7,6 @@ const Header = (props: Props) => {
   return (
     <header className={styles.widgetHeader}>
       <Nav />
-
-      {/* <h4>ICON</h4>
-      <h1>STATIONS</h1>
-      <h4>ICON</h4> */}
     </header>
   )
 }

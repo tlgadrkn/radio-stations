@@ -6,7 +6,7 @@ import styles from './index.module.css'
 
 interface Props {}
 
-const Base = (props: Props) => {
+const Base: React.FC<Props> = props => {
   return (
     <div className={styles.container}>
       <Header />

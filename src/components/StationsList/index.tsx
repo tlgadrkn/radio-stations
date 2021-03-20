@@ -18,12 +18,14 @@ const StationList: React.FC<Props> = () => {
       <ul className={styles.stationList}>
         {stations.map(item => {
           return (
-            <ListItem key={item.number}>
-              <Typography variant="body">{item.name}</Typography>
-              <Typography variant="body" bold={true}>
-                {item.number}
-              </Typography>
-            </ListItem>
+            <>
+              <ListItem isOpen={false} key={item.number}>
+                <Typography variant="body">{item.name}</Typography>
+                <Typography variant="body" bold={true}>
+                  {item.number}
+                </Typography>
+              </ListItem>
+            </>
           )
         })}
       </ul>

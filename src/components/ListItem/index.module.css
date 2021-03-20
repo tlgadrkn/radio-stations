@@ -6,3 +6,7 @@
   color: #a2abbd;
   padding-bottom: 27px;
 }
+
+.listItem:last-of-type {
+  border-bottom: none;
+}
