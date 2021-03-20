@@ -1,6 +1,7 @@
 import * as React from 'react'
-import ListItem from '../ListItem'
 import styles from './index.module.css'
+import ListItem from '../ListItem'
+import Typography from '../Typography'
 
 interface Props {}
 
@@ -18,8 +19,10 @@ const StationList: React.FC<Props> = () => {
         {stations.map(item => {
           return (
             <ListItem key={item.number}>
-              <span>{item.name}</span>
-              <span>{item.number}</span>
+              <Typography variant="body">{item.name}</Typography>
+              <Typography variant="body" bold={true}>
+                {item.number}
+              </Typography>
             </ListItem>
           )
         })}
