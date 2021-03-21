@@ -7,6 +7,14 @@
   padding-right: 30px;
   padding-bottom: 63px;
   padding-top: 54px;
+  height: 544px;
+  overflow: auto;
+  scroll-behavior: smooth;
+}
+
+.stationListWrapper::-webkit-scrollbar {
+  width: 0 !important;
+  display: none;
 }
 .stationList {
   margin-left: 0;
