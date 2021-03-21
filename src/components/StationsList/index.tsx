@@ -12,11 +12,10 @@ interface Props {
 const StationList: React.FC<Props> = state => {
   const {stations} = state?.state
   const dispatch = useStationDispatch()
-  const handleClick = (e: any) => {
-    const element = e.target
-    console.log(element)
+  console.log('stationlist', state)
 
-    dispatch({type: 'SET_CURRENTLY_PLAYING', payload: e.target.value})
+  const handleClick = (e: any) => {
+    dispatch({type: 'SET_CURRENTLY_PLAYING', payload: e.currentTarget.id})
   }
   return (
     <div className={styles.stationListWrapper}>

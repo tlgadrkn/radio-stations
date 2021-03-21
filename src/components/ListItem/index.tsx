@@ -14,18 +14,12 @@ const ListItem: React.FC<Props> = ({
   isOpen = false,
   key,
   children,
-  // handleClick
   ...props
 }) => {
   return (
     <React.Fragment>
       <Cover isOpen={isOpen} />
-      <li
-        // onClick={e => handleClick(e)}
-        className={styles.listItem}
-        // ={key}
-        {...props}
-      >
+      <li className={styles.listItem} {...props}>
         {children}
       </li>
     </React.Fragment>
