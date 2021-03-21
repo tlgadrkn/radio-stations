@@ -5,6 +5,7 @@ import PlusIcon from '../../assets/icons/plus.png'
 import Button from '../Button'
 import Image from '../Image'
 import CoverImg from '../../assets/icons/cover-img.png'
+
 interface Props {
   isOpen: boolean
 }

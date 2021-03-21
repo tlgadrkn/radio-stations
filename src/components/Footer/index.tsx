@@ -1,11 +1,13 @@
 import * as React from 'react'
 import styles from './index.module.css'
-interface Props {}
+interface Props {
+  currentlyPlaying: string | null
+}
 
-const Footer: React.FC<Props> = () => {
+const Footer: React.FC<Props> = ({currentlyPlaying}) => {
   return (
     <footer className={styles.footer}>
-      <h1>FOOTER</h1>
+      {currentlyPlaying ? <h1>{currentlyPlaying}</h1> : <h1>FOOTER</h1>}
     </footer>
   )
 }
