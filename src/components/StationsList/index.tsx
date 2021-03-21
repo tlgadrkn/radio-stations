@@ -2,10 +2,15 @@ import * as React from 'react'
 import styles from './index.module.css'
 import ListItem from '../ListItem'
 import Typography from '../Typography'
+import {useStationContext} from '../../context/stationsContext'
 
 interface Props {}
 
 const StationList: React.FC<Props> = () => {
+  const state = useStationContext()
+
+  console.log(state)
+
   const stations = [
     {name: 'Putin FM', number: '66,6'},
     {name: 'Dribbble FM', number: '101,2'},

@@ -1,11 +1,13 @@
 import './App.css'
 import Base from './components/Base'
-
+import {StationProvider} from './context/stationsContext'
 function App() {
   return (
-    <div className="App">
-      <Base />
-    </div>
+    <StationProvider>
+      <div className="App">
+        <Base />
+      </div>
+    </StationProvider>
   )
 }
 
