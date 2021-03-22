@@ -12,7 +12,7 @@ interface Props {
 const ListItem: React.FC<Props> = ({isOpen = false, children, ...props}) => {
   return (
     <React.Fragment>
-      <Cover isOpen={isOpen} />
+      {isOpen && <Cover isOpen={isOpen} />}
       <li className={styles.listItem} {...props}>
         {children}
       </li>

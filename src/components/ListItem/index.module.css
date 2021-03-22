@@ -4,6 +4,7 @@
   list-style-type: none;
   border-bottom: 1px solid #515561;
   padding-bottom: 27px;
+  cursor: pointer;
 }
 
 .listItem:last-of-type {

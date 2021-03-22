@@ -4,6 +4,7 @@ import ListItem from '../ListItem'
 import Text from '../Text'
 import {State as StateType} from '../../context/stationsContext'
 import {useStationDispatch} from '../../context/stationsContext'
+import {useSpring, animated} from 'react-spring'
 
 interface Props {
   state: StateType
@@ -12,6 +13,7 @@ interface Props {
 const StationList: React.FC<Props> = state => {
   const {stations} = state?.state
   const {stationListWrapper, stationList} = styles
+  const animateProps = useSpring({delay: 100, opacity: 1, from: {opacity: 0}})
 
   const dispatch = useStationDispatch()
   // check this 'any'
@@ -20,7 +22,7 @@ const StationList: React.FC<Props> = state => {
   }
   return (
     <div className={stationListWrapper}>
-      <ul className={stationList}>
+      <animated.ul className={stationList} style={animateProps}>
         {stations.map(item => {
           return (
             <React.Fragment key={item.number}>
@@ -36,7 +38,7 @@ const StationList: React.FC<Props> = state => {
             </React.Fragment>
           )
         })}
-      </ul>
+      </animated.ul>
     </div>
   )
 }

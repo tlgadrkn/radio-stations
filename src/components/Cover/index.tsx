@@ -5,14 +5,22 @@ import PlusIcon from '../../assets/icons/plus.png'
 import Button from '../Button'
 import Image from '../Image'
 import CoverImg from '../../assets/icons/cover-img.png'
+import Text from '../Text'
+import {useSpring, animated} from 'react-spring'
 
 interface Props {
   isOpen: boolean
 }
 
 const Cover: React.FC<Props> = ({isOpen = false, ...props}) => {
+  const animateProps = useSpring({
+    delay: 90,
+    from: {opacity: 0},
+    to: {opacity: 1},
+  })
+
   return isOpen ? (
-    <div className={styles.cover} {...props}>
+    <animated.div className={styles.cover} style={animateProps} {...props}>
       <Button>
         <Image
           src={MinusIcon}
@@ -30,10 +38,10 @@ const Cover: React.FC<Props> = ({isOpen = false, ...props}) => {
       <Button>
         <Image src={PlusIcon} alt="Plus Icon which goes back to next station" />
       </Button>
-    </div>
+    </animated.div>
   ) : (
     // fix this
-    <span></span>
+    <Text>Something Went Wrong</Text>
   )
 }
 
