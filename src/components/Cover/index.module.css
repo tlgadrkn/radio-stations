@@ -1,4 +1,15 @@
 .cover {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.coverImgWrapper {
+  height: 280px;
+  width: 280px;
+  border: 4px solid #a2abbd;
+  border-radius: 50%;
+}
+.coverImg {
+  width: 100%;
 }

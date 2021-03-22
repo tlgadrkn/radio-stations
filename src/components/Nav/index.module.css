@@ -6,3 +6,7 @@
   align-items: center;
   justify-content: space-between;
 }
+.navHeading {
+  font-size: 44px;
+  font-weight: 400;
+}

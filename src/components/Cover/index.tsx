@@ -19,10 +19,13 @@ const Cover: React.FC<Props> = ({isOpen = false, ...props}) => {
           alt="Minus Icon which goes back to previous station"
         />
       </Button>
-
-      <Button>
-        <Image src={CoverImg} alt="Radio Station's cover image" />
-      </Button>
+      <div className={styles.coverImgWrapper}>
+        <Image
+          className={styles.coverImg}
+          src={CoverImg}
+          alt="Radio Station's cover image"
+        />
+      </div>
 
       <Button>
         <Image src={PlusIcon} alt="Plus Icon which goes back to next station" />

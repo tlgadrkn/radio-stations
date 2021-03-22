@@ -1,9 +1,9 @@
 import * as React from 'react'
-import styles from './index.module.css'
 
 interface Props {
   src: string
   alt: string
+  className?: string
 }
 
 const Image: React.FC<Props> = ({src, alt, ...props}) => {

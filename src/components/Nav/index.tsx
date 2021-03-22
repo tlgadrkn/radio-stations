@@ -5,9 +5,7 @@ import Switch from '../../assets/icons/switch.png'
 import Button from '../Button'
 import Image from '../Image'
 
-interface Props {}
-
-const Nav: React.FC<Props> = () => {
+const Nav: React.FC = () => {
   return (
     <nav className={styles.nav}>
       <Button>
@@ -16,7 +14,7 @@ const Nav: React.FC<Props> = () => {
           alt="a white back arrow to go to previous page"
         ></Image>
       </Button>
-      <h1>STATIONS</h1>
+      <h1 className={styles.navHeading}>STATIONS</h1>
       <Button>
         <Image
           src={Switch}
