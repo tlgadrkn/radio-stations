@@ -32,6 +32,7 @@ const Cover: React.FC<Props> = ({isOpen = false, ...props}) => {
       </Button>
     </div>
   ) : (
+    // fix this
     <span></span>
   )
 }

@@ -45,15 +45,11 @@ export const StationDispatch = React.createContext<React.Dispatch<Action> | null
   null,
 )
 
-const StationProvider: React.FC = ({children, ...props}) => {
-  const [state, dispatch] = React.useReducer(stationReducer, initialState)
-  // check this later
-  React.useEffect(() => {
-    console.log(state)
-    if (!state) {
-      fetchData('sad')
-    }
-  }, [state])
+const StationProvider: React.FC = ({children}) => {
+  const [state, dispatch] = React.useReducer(
+    stationReducer,
+    initialState || fetchData('urlToFetch'),
+  )
 
   return (
     <StationContext.Provider value={state}>

@@ -13,9 +13,9 @@ const Base: React.FC<Props> = props => {
     <div className={styles.container}>
       <Header />
 
-      {state === null ? <h1>state is null</h1> : <StationList state={state} />}
+      {!state ? <h1>Loading Stations...</h1> : <StationList state={state} />}
 
-      <Footer currentlyPlaying={state.currentlyPlaying} />
+      <Footer state={state} />
     </div>
   )
 }
