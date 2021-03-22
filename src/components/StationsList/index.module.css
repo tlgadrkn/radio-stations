@@ -23,3 +23,11 @@
   flex-direction: column;
   list-style-type: none;
 }
+
+.listItem {
+  font-size: 44px;
+}
+
+.listItemBold {
+  font-weight: bold;
+}

@@ -1,5 +1,6 @@
 import * as React from 'react'
 import {stationReducer} from '../reducers/stationReducer'
+import {fetchData} from '../utils/helperFunctions'
 export interface StationItems {
   name: string
   number: string
@@ -46,6 +47,13 @@ export const StationDispatch = React.createContext<React.Dispatch<Action> | null
 
 const StationProvider: React.FC = ({children, ...props}) => {
   const [state, dispatch] = React.useReducer(stationReducer, initialState)
+  // check this later
+  React.useEffect(() => {
+    console.log(state)
+    if (!state) {
+      fetchData('sad')
+    }
+  }, [state])
 
   return (
     <StationContext.Provider value={state}>
