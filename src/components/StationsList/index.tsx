@@ -1,7 +1,6 @@
 import * as React from 'react'
 import styles from './index.module.css'
 import ListItem from '../ListItem'
-import Typography from '../Typography'
 import {State as StateType} from '../../context/stationsContext'
 import {useStationDispatch} from '../../context/stationsContext'
 
@@ -29,10 +28,8 @@ const StationList: React.FC<Props> = state => {
                 key={item.number}
                 id={item.number}
               >
-                <Typography variant="body">{item.name}</Typography>
-                <Typography variant="body" bold={true}>
-                  {item.number}
-                </Typography>
+                <span>{item.name}</span>
+                <span>{item.number}</span>
               </ListItem>
             </React.Fragment>
           )
