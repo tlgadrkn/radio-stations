@@ -1,5 +1,5 @@
 import * as React from 'react'
-
+import {stationReducer} from '../reducers/stationReducer'
 export interface StationItems {
   name: string
   number: string
@@ -11,13 +11,13 @@ export interface State {
   currentlyPlaying: string | null
 }
 
-interface ActionTypes {
+export interface ActionTypes {
   setCurrentlyPlaying: string
   getStations: string
   updateStations: string
 }
 
-type Action = {
+export type Action = {
   type: string
   payload: string | boolean | Array<StationItems> | null
 }
@@ -33,7 +33,7 @@ const initialState: State = {
   currentlyPlaying: null,
 }
 
-const actionTypes: ActionTypes = {
+export const actionTypes: ActionTypes = {
   getStations: 'GET_STATIONS',
   updateStations: 'UPDATE_STATIONS',
   setCurrentlyPlaying: 'SET_CURRENTLY_PLAYING',
@@ -43,34 +43,6 @@ const StationContext = React.createContext({} as State)
 export const StationDispatch = React.createContext<React.Dispatch<Action> | null>(
   null,
 )
-
-function stationReducer(state: State, action: Action) {
-  switch (action.type) {
-    case actionTypes.getStations:
-      return initialState
-    case actionTypes.setCurrentlyPlaying:
-      if (state.currentlyPlaying === action.payload) {
-        return state
-      }
-      const filteredStations = [...state.stations]
-
-      for (let station of filteredStations) {
-        if (station.number !== action.payload && station.isOpen) {
-          station.isOpen = false
-        } else if (station.number === action.payload) {
-          station.isOpen = true
-        }
-      }
-
-      return Object.assign({}, state, {
-        stations: filteredStations,
-        currentlyPlaying: action.payload,
-      })
-
-    default:
-      throw new Error(`Unhandled action type: ${action.type}`)
-  }
-}
 
 const StationProvider: React.FC = ({children, ...props}) => {
   const [state, dispatch] = React.useReducer(stationReducer, initialState)
