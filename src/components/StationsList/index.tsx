@@ -1,7 +1,7 @@
 import * as React from 'react'
-import cn from 'classnames'
 import styles from './index.module.css'
 import ListItem from '../ListItem'
+import Text from '../Text'
 import {State as StateType} from '../../context/stationsContext'
 import {useStationDispatch} from '../../context/stationsContext'
 
@@ -11,10 +11,9 @@ interface Props {
 
 const StationList: React.FC<Props> = state => {
   const {stations} = state?.state
-  const {stationListWrapper, stationList, listItem, listItemBold} = styles
+  const {stationListWrapper, stationList} = styles
 
   const dispatch = useStationDispatch()
-  console.log('stationlist', state)
   // check this 'any'
   const handleClick = (e: any) => {
     dispatch({type: 'SET_CURRENTLY_PLAYING', payload: e.currentTarget.id})
@@ -31,10 +30,8 @@ const StationList: React.FC<Props> = state => {
                 key={item.number}
                 id={item.number}
               >
-                <span className={listItem}>{item.name}</span>
-                <span className={cn([listItem, listItemBold])}>
-                  {item.number}
-                </span>
+                <Text>{item.name}</Text>
+                <Text bold>{item.number}</Text>
               </ListItem>
             </React.Fragment>
           )

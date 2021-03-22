@@ -6,6 +6,7 @@
   border-bottom-left-radius: 47px;
   border-bottom-right-radius: 47px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
