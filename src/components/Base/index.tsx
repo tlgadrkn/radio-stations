@@ -5,9 +5,7 @@ import Footer from '../Footer'
 import styles from './index.module.css'
 import {useStationContext} from '../../context/stationsContext'
 
-interface Props {}
-
-const Base: React.FC<Props> = props => {
+const Base: React.FC = () => {
   const state = useStationContext()
   return (
     <div className={styles.container}>

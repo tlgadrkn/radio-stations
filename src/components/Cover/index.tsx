@@ -40,7 +40,6 @@ const Cover: React.FC<Props> = ({isOpen = false, ...props}) => {
       </Button>
     </animated.div>
   ) : (
-    // fix this
     <Text>Something Went Wrong</Text>
   )
 }
