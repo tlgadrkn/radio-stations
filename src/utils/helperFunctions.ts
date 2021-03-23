@@ -18,10 +18,12 @@ const getCurrentlyPlayingStation = (number: string | null, state: State) => {
   return station
 }
 
-const fetchData = async (url: string) => {
-  const response = await fetch(url)
+async function fetchStations(url: string): Promise<State> {
+  const response = await window.fetch(url)
+
   const data = await response.json()
+
   return data
 }
 
-export {getCurrentlyPlayingStation, fetchData, setCurrentlyPlaying}
+export {getCurrentlyPlayingStation, fetchStations, setCurrentlyPlaying}

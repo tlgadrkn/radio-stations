@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {stationReducer} from '../reducers/stationReducer'
-import {fetchData} from '../utils/helperFunctions'
+import {fetchStations} from '../utils/helperFunctions'
 export interface StationItems {
   name: string
   number: string
@@ -48,7 +48,10 @@ export const StationDispatch = React.createContext<React.Dispatch<Action> | null
 const StationProvider: React.FC = ({children}) => {
   const [state, dispatch] = React.useReducer(
     stationReducer,
-    initialState || fetchData('urlToFetch'),
+    initialState ||
+      fetchStations(
+        'https://e2960715-b720-4c62-9df5-32f9b7f80676.mock.pstmn.io/stations',
+      ),
   )
 
   return (
