@@ -17,17 +17,8 @@
   display: none;
 }
 .stationList {
-  margin-left: 0;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   list-style-type: none;
-}
-
-.listItem {
-  font-size: 44px;
-}
-
-.listItemBold {
-  font-weight: bold;
 }
