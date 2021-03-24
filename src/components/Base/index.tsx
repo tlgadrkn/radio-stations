@@ -10,9 +10,7 @@ const Base: React.FC = () => {
   return (
     <div className={styles.container}>
       <Header />
-
       {!state ? <h1>Loading Stations...</h1> : <StationList state={state} />}
-
       <Footer state={state} />
     </div>
   )
